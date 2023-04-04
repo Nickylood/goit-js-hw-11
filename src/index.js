@@ -1,15 +1,15 @@
-import SearchApiService from "./js/search-api-service";
+import SearchApiService from "./js/api-service";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import renderImageCard from "./js/render-image-card";
+import renderImageCard from "./js/render-card";
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-const searchForm = document.querySelector("#search-form");
+const form = document.querySelector("#search-form");
 const loadMoreBtn = document.querySelector(".load-more");
 const imagesContainer = document.querySelector(".gallery");
 const input = document.querySelector("[name='searchQuery']")
 
-searchForm.addEventListener('submit', onFormSubmit);
+form.addEventListener('submit', onFormSubmit);
 loadMoreBtn.addEventListener("click", onLoadMore);
 
 const searchApi = new SearchApiService();
@@ -87,3 +87,4 @@ function onLoadMore() {
             loadMoreBtnHide();
         });
 }
+
